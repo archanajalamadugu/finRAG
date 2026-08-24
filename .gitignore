@@ -17,3 +17,4 @@ __pycache__/
 .gradio/
 finrag_work/
 .DS_Store
+_to_delete/
