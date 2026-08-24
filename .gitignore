@@ -21,3 +21,5 @@ _to_delete/
 
 # personal prep, not a project artifact
 VIDEO_SCRIPT.md
+PASTE_THESE.py
+*.backup

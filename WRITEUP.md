@@ -3,6 +3,10 @@
 **The Gen Academy · Mastering Agentic AI Bootcamp · Week 2, Project 2**
 Financial Document Intelligence Pipeline RAG
 
+### Live app
+
+[**FinRAG — live Gradio app**](https://cc8be4a044f5eabd25.gradio.live)
+
 ---
 
 ## First, for anyone who doesn't work in finance
@@ -90,6 +94,37 @@ The project implements the two things Project 2 requires:
    latency, with and without
 
 Plus the bonus: a chat interface with a company filter.
+
+## Week 2 RAG framework
+
+### The primer: FinRAG in one line
+
+> My RAG app helps equity-research analysts answer company-specific questions
+> from the most recent 10-K filings of eight semiconductor companies in a
+> Gradio 6 chat interface, with 100% citation-supported claims and a target
+> median response time of three seconds or less.
+
+### Live app
+
+[**FinRAG — live Gradio app**](https://cc8be4a044f5eabd25.gradio.live)
+
+### Worked FinRAG example
+
+**Question:** What was AMD's Data Center segment revenue?
+
+**Answer:** AMD reported Data Center net revenue of $16.6 billion in 2025.
+`[AMD 2026-02-04, Item 6 — Selected Financial Data]`
+
+### The framework
+
+| Field | Fill in (1 to 2 sentences max) |
+|---|---|
+| **Use case** (one line) | FinRAG lets equity-research analysts ask company-specific and cross-company questions about eight semiconductor companies in a Gradio 6 chat interface. It answers only from retrieved filing evidence, cites each claim, and clarifies or declines when the filings do not support an answer. |
+| **Corpus** | Eight English-language, table-heavy SEC EDGAR 10-K filings: NVIDIA, AMD, Intel, Broadcom, Qualcomm, Micron, Texas Instruments, and Applied Materials. SEC EDGAR is the source of truth. |
+| **Ingestion + cleaning** | The offline pipeline resolves ticker to CIK and fetches each company's newest 10-K. BeautifulSoup/lxml cleaning separates data tables from layout tables, folds currency cells into their values, preserves data tables whole, and tags each block with its SEC Item section. |
+| **Ingestion + freshness** | Ingestion runs offline when a filing changes; the app cannot accept a new ticker at question time because fetching, cleaning, chunking, embedding, and indexing must happen first. The corpus is refreshed by rerunning the pipeline when a new 10-K is available; no automated freshness SLA is claimed. |
+| **Chunking + embedding** | The comparison uses fixed `RecursiveCharacterTextSplitter` chunks of 800 characters with 100-character overlap and semantic chunks using 90th-percentile breakpoints; chunks under 50 characters are dropped and chunks above 2,500 characters are split. Both strategies use Qwen3-Embedding-8B via Nebius Token Factory (4,096 dimensions), keeping query and document embeddings in the same vector space. |
+| **Retrieve** | Pinecone stores two namespaces—`fixed` (5,451 vectors) and `semantic` (2,692)—within one index. The online path combines Pinecone cosine search and BM25 keyword search with 50/50 Reciprocal Rank Fusion, retrieves 20 candidates, applies a pre-search company metadata filter when selected, reranks with `BAAI/bge-reranker-base`, and sends the top 5 passages to Qwen3-235B-A22B-Instruct. |
 
 ## Architecture
 
