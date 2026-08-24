@@ -111,7 +111,6 @@ finrag_architecture.png the pipeline diagram WRITEUP.md refers to
 SETUP.md               one-time local setup: venv, keys, VS Code kernel
 DECISIONS.md           why the project is shaped this way
 ENGINEERING_LOG.md     incidents recorded while they were still fresh
-VIDEO_SCRIPT.md        narration for the demo recording
 notebooks/FinRAG.ipynb the notebook you actually run, cell by cell
 tests/                 54 offline tests: no network, no API key
 extras/                an earlier from-scratch build, kept for reference
