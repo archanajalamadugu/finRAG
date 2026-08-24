@@ -1,0 +1,19 @@
+# --- secrets: never commit ---
+.env
+
+# --- virtualenv: 1.5 GB, rebuilt from requirements.txt ---
+.venv/
+venv/
+
+# --- downloaded filings: 18 MB, re-fetched by src/fetch_filings.py ---
+# data/manifest.json IS committed -- it records which filing each answer used.
+data/raw/
+
+# --- caches and scratch ---
+__pycache__/
+*.pyc
+*.egg-info/
+.ipynb_checkpoints/
+.gradio/
+finrag_work/
+.DS_Store

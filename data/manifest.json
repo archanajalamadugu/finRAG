@@ -1,0 +1,82 @@
+[
+  {
+    "company": "NVIDIA",
+    "cik": "1045810",
+    "filing_date": "2026-02-25",
+    "form": "10-K",
+    "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125.htm",
+    "path": "data/raw/NVIDIA_10K_2026-02-25.html",
+    "scheme": "item",
+    "bytes": 1967816
+  },
+  {
+    "company": "AMD",
+    "cik": "2488",
+    "filing_date": "2026-02-04",
+    "form": "10-K",
+    "url": "https://www.sec.gov/Archives/edgar/data/2488/000000248826000018/amd-20251227.htm",
+    "path": "data/raw/AMD_10K_2026-02-04.html",
+    "scheme": "item",
+    "bytes": 2174592
+  },
+  {
+    "company": "Intel",
+    "cik": "50863",
+    "filing_date": "2026-01-23",
+    "form": "10-K",
+    "url": "https://www.sec.gov/Archives/edgar/data/50863/000005086326000011/intc-20251227.htm",
+    "path": "data/raw/Intel_10K_2026-01-23.html",
+    "scheme": "item",
+    "bytes": 3320720
+  },
+  {
+    "company": "Broadcom",
+    "cik": "1730168",
+    "filing_date": "2025-12-18",
+    "form": "10-K",
+    "url": "https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/avgo-20251102.htm",
+    "path": "data/raw/Broadcom_10K_2025-12-18.html",
+    "scheme": "item",
+    "bytes": 2700028
+  },
+  {
+    "company": "Qualcomm",
+    "cik": "804328",
+    "filing_date": "2025-11-05",
+    "form": "10-K",
+    "url": "https://www.sec.gov/Archives/edgar/data/804328/000080432825000085/qcom-20250928.htm",
+    "path": "data/raw/Qualcomm_10K_2025-11-05.html",
+    "scheme": "item",
+    "bytes": 1878834
+  },
+  {
+    "company": "Micron",
+    "cik": "723125",
+    "filing_date": "2025-10-03",
+    "form": "10-K",
+    "url": "https://www.sec.gov/Archives/edgar/data/723125/000072312525000028/mu-20250828.htm",
+    "path": "data/raw/Micron_10K_2025-10-03.html",
+    "scheme": "item",
+    "bytes": 2439110
+  },
+  {
+    "company": "Texas Instruments",
+    "cik": "97476",
+    "filing_date": "2026-02-06",
+    "form": "10-K",
+    "url": "https://www.sec.gov/Archives/edgar/data/97476/000009747626000059/txn-20251231.htm",
+    "path": "data/raw/Texas_Instruments_10K_2026-02-06.html",
+    "scheme": "item",
+    "bytes": 2110366
+  },
+  {
+    "company": "Applied Materials",
+    "cik": "6951",
+    "filing_date": "2025-12-12",
+    "form": "10-K",
+    "url": "https://www.sec.gov/Archives/edgar/data/6951/000162828025056742/amat-20251026.htm",
+    "path": "data/raw/Applied_Materials_10K_2025-12-12.html",
+    "scheme": "item",
+    "bytes": 2221981
+  }
+]

@@ -1,0 +1,46 @@
+# FinRAG — install with:  pip install -r requirements.txt
+# (inside an activated virtual environment)
+
+# --- The RAG framework: the standard parts that connect the pipeline ---
+langchain>=1.0.0
+langchain-classic>=1.0.0            # EnsembleRetriever, ContextualCompression,
+                                    #   CrossEncoderReranker -- moved here in v1
+langchain-community>=0.4.0          # BM25Retriever, cross-encoder wrapper
+langchain-openai>=0.2.0             # talks to Nebius (OpenAI-compatible)
+langchain-text-splitters>=0.3.0     # fixed-size chunking
+langchain-experimental>=0.3.0       # SemanticChunker
+
+# --- Vector database: stores the embeddings, finds the nearest fast ---
+pinecone>=5.0.0
+langchain-pinecone>=0.2.0
+
+# --- Keyword search, running alongside meaning search ---
+rank-bm25>=0.2.2
+
+# --- The reranker: a careful second pass over the candidates ---
+# Downloads a few hundred MB of model the first time it runs.
+sentence-transformers>=3.0.0
+
+# --- Reading the filings: 10-K HTML is messy and table-heavy ---
+beautifulsoup4>=4.12.0
+lxml>=5.0.0
+
+# --- HTTPS certificate verification (python.org Python ignores the macOS
+#     keychain, so we supply Mozilla's CA list explicitly) ---
+certifi
+
+# --- Talking to Nebius ---
+openai>=1.40.0
+
+# --- Keeping API keys out of the repo ---
+python-dotenv>=1.0.0
+
+# --- Running notebooks inside VS Code ---
+ipykernel>=6.29.0
+notebook>=7.0.0
+
+# --- The chat interface you record for the demo ---
+gradio>=4.44.0
+
+# --- Numbers ---
+numpy>=1.26.0
